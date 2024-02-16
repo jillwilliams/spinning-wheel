@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Spinning Wheel</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Caveat&family=Creepster&family=Dancing+Script&family=Fuggles&family=Indie+Flower&family=Kalam&family=Montserrat:wght@100&family=Mountains+of+Christmas&family=Permanent+Marker&family=Roboto:ital,wght@0,100;1,100&family=Shadows+Into+Light&display=swap" rel="stylesheet">
+        
+        <!-- keep this -->
+        <script src="https://kit.fontawesome.com/9f71dab2a2.js" crossorigin="anonymous"></script>
+        <!-- keep this -->
+        <link rel="stylesheet" href="./styles.css">
+        <script src="script.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="spinBtn">Spin</div>
+            <div class="wheel">
+                <span style="--i:0;"></span>
+                <span style="--i:1;"></span>
+                <span style="--i:2;"></span>
+                <span style="--i:3;"></span>
+                <span style="--i:4;"></span>
+                <div class="number">
+                    <b style="--i:0;">5</b>
+                    <b style="--i:1;">1</b>
+                    <b style="--i:2;">4</b>
+                    <b style="--i:3;">6</b>
+                    <b style="--i:4;">2</b>
+                    <b style="--i:5;">8</b>
+                    <b style="--i:6;">7</b>
+                    <b style="--i:7;">4</b>
+                </div>
+            </div>
+            <div class="wheel inner">
+                <span style="--i:0;"></span>
+                <span style="--i:1;"></span>
+                <span style="--i:2;"></span>
+                <span style="--i:3;"></span>
+                <span style="--i:4;"></span>
+                <div class="number">
+                    <b style="--i:0;">5</b>
+                    <b style="--i:1;">1</b>
+                    <b style="--i:2;">4</b>
+                    <b style="--i:3;">6</b>
+                    <b style="--i:4;">2</b>
+                    <b style="--i:5;">8</b>
+                    <b style="--i:6;">7</b>
+                    <b style="--i:7;">4</b>
+                </div>
+            </div>
+        </div>
+        <script>
+            let wheel = document.querySelector('.wheel');
+            let inner = document.querySelector('.inner');
+            let spinBtn = document.querySelector('.spinBtn');
+            let value1 = Math.ceil(Math.random() * -3600);
+            let value2 = Math.ceil(Math.random() * 3600);
+            spinBtn.onclick = function() {
+                wheel.style.transform = "rotate("+ value1 +"deg)";
+                inner.style.transform = "rotate("+ value2 +"deg)";
+                value1 += Math.ceil(Math.random() * -3600);
+                value2 += Math.ceil(Math.random() * 3600);
+            }
+        </script>
+    </body>
+</html>
